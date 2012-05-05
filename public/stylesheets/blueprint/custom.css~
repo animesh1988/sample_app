@@ -76,6 +76,8 @@ a.signup_button{
 	color: white;
 	background: #006400;	
 	padding: 20px;
+	font-size: 150%
+	font-weight: bold;
 }
 
 .round{
