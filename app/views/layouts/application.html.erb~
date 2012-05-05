@@ -9,7 +9,7 @@
 	<body>
 		<div class="container">
 			<header>
-				<%= image_tag("logo.png", :alt=>"Sample App", :class=> "round")%>
+				<%= image_tag("logo-small.png", :alt=>"Sample App", :class=> "round")%>
 				<nav class="round">
 					<ul>
 						<li><%= link_to "Home", '#' %></li>
@@ -18,7 +18,9 @@
 					</ul>
 				</nav>
 			</header>
-			<%= yield %>
+			<section class="round">
+					<%= yield %>
+			</section>
 		</div>
 	</body>
 </html>
