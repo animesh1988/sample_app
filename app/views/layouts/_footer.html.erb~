@@ -1,2 +1,9 @@
 <footer>
+	<nav class="round">
+	<ul>
+		<li><%= link_to "About", about_path %></li>
+		<li><%= link_to "Contact", contact_path %></li>
+		<li><%= link_to "News", 'http://www.google.com' %></li>
+		<li><%= link_to "Facebook", 'http://www.facebook.com' %></li>
+	</ul>
 </footer>
