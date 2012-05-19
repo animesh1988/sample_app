@@ -4,13 +4,21 @@ describe UsersController do
 	render_views
   describe "GET 'new'" do
     it "should be successful" do
-      get 'new'
+      get :new
       response.should be_success
     end
     it "should have correct title" do
-    	get 'new'
+    	get :new
     	response.should have_selector('title', :content=>"Sign Up")
     end
   end
-
+  describe "Get 'show'" do
+  	before(:each) do
+  		@user = Factory(:user)
+  	end
+  	it "should be successful" do
+  		get :show, :id=>@user
+  		response.should be_success
+  	end
+    end
 end

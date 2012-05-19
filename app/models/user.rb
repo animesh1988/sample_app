@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
 	validates :password, :presence => true,
 											 :confirmation=>true,
 											 :length =>{:within => 6..40}
-	
 	before_save :encrypt_password
 	
 	def has_password?(submitted_password)
@@ -21,12 +20,13 @@ class User < ActiveRecord::Base
 	end
 	
 	#Class level method ( Like static?)
-	def User.authenticate(email, submitted_password)
+	class << self
+	def authenticate(email, submitted_password)
 		user = find_by_email(email)		
 		return nil if user.nil?	
 		return user if user.has_password?(submitted_password)		
 	end
-	
+	end
 	private 
 	
 		def encrypt_password
